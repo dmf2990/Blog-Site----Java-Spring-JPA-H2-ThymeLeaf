@@ -1,0 +1,13 @@
+package org.blogsite.Mastery.Blog.Site;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MasteryBlogSiteApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MasteryBlogSiteApplication.class, args);
+	}
+
+}
