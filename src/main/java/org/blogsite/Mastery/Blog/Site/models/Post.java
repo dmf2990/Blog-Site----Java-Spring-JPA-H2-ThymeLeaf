@@ -33,7 +33,7 @@ public class Post {
 	
 	public Post() {}
 	
-	public Post(String postTitle, LocalDateTime date, String body, Author authors, Category category, Tag ...tags) {
+	public Post(String postTitle, String body, Author authors, Category category, Tag ...tags) {
 		 this.postTitle = postTitle;
 	     this.body = body;
 	     this.date = LocalDateTime.now();

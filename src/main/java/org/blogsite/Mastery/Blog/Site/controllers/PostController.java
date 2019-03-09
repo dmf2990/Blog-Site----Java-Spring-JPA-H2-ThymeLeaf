@@ -49,17 +49,12 @@ public class PostController {
 	//populate that form on new page with all other posts
 	@PostMapping("/newBlog")
 	public String submitPost (String postTitle, String body, String authorName, String postCategory, String tagName) {
-	Post postMade = postRepo.findByPostTitle(postTitle);	
 		
-		LocalDateTime date = LocalDateTime.now();
 		Author author = authorRepo.findByAuthorName(authorName);
 		Category category = catRepo.findByPostCategory(postCategory);
 		Tag tag = tagRepo.findByTagName(tagName);
 		
-		if (postMade == null) {
-			postMade = postRepo.save(new Post(postTitle, date, body, author, category, tag));
-		}
-		postMade = postRepo.save(postMade);
+		postRepo.save(new Post(postTitle, body, author, category, tag));
 		
 		return "redirect:/allPost";
 	}
