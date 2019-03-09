@@ -12,9 +12,8 @@
     </header>
 
         <ul th:each="post : ${Posts}">
-                <a th:href="@{|/${post.postId}">
-                    <li th :text="${post.postTitle}"></li>
-                </a>            
+                    <li th:text="${post.postTitle}"></li>
+                    <li th:text="${post.body}"></li>
         </ul>
 </body>
 </html>

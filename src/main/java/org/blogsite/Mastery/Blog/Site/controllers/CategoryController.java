@@ -6,8 +6,11 @@ import org.blogsite.Mastery.Blog.Site.Repositories.AuthorRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.CategoryRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.PostRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.TagRepository;
+import org.blogsite.Mastery.Blog.Site.models.Category;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class CategoryController {
@@ -22,8 +25,15 @@ public class CategoryController {
 	AuthorRepository authorRepo;
 	
 	@GetMapping("/allCat")
-	public String allCat() {
+	public String allCat(Model model) {
+		model.addAttribute("Categories", catRepo.findAll());
 		return "allCat";
+	}
+	
+	@PostMapping("/allCat")
+	public String submitCategory (String postCategory) {
+		catRepo.save(new Category(postCategory));
+		return "redirect:/allCat";
 	}
 
 }

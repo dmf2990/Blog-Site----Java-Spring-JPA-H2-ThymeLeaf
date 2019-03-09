@@ -46,7 +46,7 @@ public class Post {
 		return postId;
 	}
 
-	public String getTitle() {
+	public String getPostTitle() {
 		return postTitle;
 	}
 

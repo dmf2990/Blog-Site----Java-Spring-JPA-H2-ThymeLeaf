@@ -8,6 +8,17 @@
 </head>
 <body>
     <p>THIS BETTER FUCKING WORK</p>
-    
+    <form action="/allTag" method="POST">
+        <ul>
+            <p>Add Tag</p>
+            <li><input type="text" name="tagName"></li>
+            <li class=""> <button type="submit">Submit</button></li>
+        </ul>
+
+        <ul th:each="tag : ${Tags}">
+            <li th:text="${tag.tagName}"></li>
+        </ul>
+
+    </form>
 </body>
 </html>

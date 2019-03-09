@@ -8,6 +8,18 @@
 </head>
 <body>
     <p>THIS IS TEST TEXT</p>
+    <form action="/allAuth" method="POST">
+        <ul>
+            <p>Add Author</p>
+            <li><input type="text" name="authorName"></li>
+            <li class=""> <button type="submit">Submit</button></li>
+        </ul>
+
+        <ul th:each="author : ${Authors}">
+            <li th:text="${author.authorName}"></li>
+        </ul>
+
+    </form>
     
 </body>
 </html>

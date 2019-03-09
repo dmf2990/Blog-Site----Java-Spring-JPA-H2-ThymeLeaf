@@ -1,7 +1,5 @@
 package org.blogsite.Mastery.Blog.Site.controllers;
 
-import java.time.LocalDateTime;
-
 import javax.annotation.Resource;
 
 import org.blogsite.Mastery.Blog.Site.Repositories.AuthorRepository;
@@ -44,7 +42,7 @@ public class PostController {
 	@GetMapping("/newBlog")
 	public String newBlog() {
 		return "newBlog";
-	}
+  } 
 	
 	//populate that form on new page with all other posts
 	@PostMapping("/newBlog")

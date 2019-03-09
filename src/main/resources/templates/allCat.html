@@ -8,6 +8,17 @@
 </head>
 <body>
     <p>HELL YEAH MOTHER FUCKER</p>
-    
+    <form action="/allCat" method="POST">
+        <ul>
+            <p>Add Category</p>
+            <li><input type="text" name="postCategory"></li>
+            <li class=""> <button type="submit">Submit</button></li>
+        </ul>
+
+        <ul th:each="category : ${Categories}">
+            <li th:text="${category.postCategory}"></li>
+        </ul>
+
+    </form>
 </body>
 </html>

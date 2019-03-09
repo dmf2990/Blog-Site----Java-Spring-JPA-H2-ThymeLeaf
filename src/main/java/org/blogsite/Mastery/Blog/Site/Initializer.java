@@ -1,7 +1,5 @@
 package org.blogsite.Mastery.Blog.Site;
 
-import java.time.LocalDateTime;
-
 import javax.annotation.Resource;
 
 import org.blogsite.Mastery.Blog.Site.Repositories.AuthorRepository;
@@ -39,7 +37,7 @@ public class Initializer implements CommandLineRunner {
 		Category category1 = catRepo.save(new Category("crossFit"));
 		Category category2 = catRepo.save(new Category("kickBoxing"));
 		
-		postRepo.save(new Post("String", "string", author1, category1, tag));	
+		postRepo.save(new Post("Darrel", "Darrel likes to posts blogs like this", author1, category1, tag));	
 	}
 
 
