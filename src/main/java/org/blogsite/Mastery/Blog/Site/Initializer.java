@@ -1,11 +1,16 @@
 package org.blogsite.Mastery.Blog.Site;
 
+import java.time.LocalDateTime;
+
 import javax.annotation.Resource;
 
 import org.blogsite.Mastery.Blog.Site.Repositories.AuthorRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.CategoryRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.PostRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.TagRepository;
+import org.blogsite.Mastery.Blog.Site.models.Author;
+import org.blogsite.Mastery.Blog.Site.models.Category;
+import org.blogsite.Mastery.Blog.Site.models.Tag;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +28,10 @@ public class Initializer implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		
+		LocalDateTime date = LocalDateTime.now();
+		Author author = authorRepo.save(new Author("Drew"));
+		Category category = catRepo.save(new Category("crossFit"));
+		Tag tag = tagRepo.save(new Tag("tag"));	
 	}
 
 

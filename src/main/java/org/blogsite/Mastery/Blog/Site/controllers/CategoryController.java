@@ -6,7 +6,10 @@ import org.blogsite.Mastery.Blog.Site.Repositories.AuthorRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.CategoryRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.PostRepository;
 import org.blogsite.Mastery.Blog.Site.Repositories.TagRepository;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
+@Controller
 public class CategoryController {
 	
 	@Resource
@@ -17,5 +20,10 @@ public class CategoryController {
 	TagRepository tagRepo;
 	@Resource
 	AuthorRepository authorRepo;
+	
+	@GetMapping("/allCat")
+	public String allCat() {
+		return "allCat";
+	}
 
 }
