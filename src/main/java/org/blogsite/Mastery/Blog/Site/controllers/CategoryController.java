@@ -10,6 +10,7 @@ import org.blogsite.Mastery.Blog.Site.models.Category;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -34,6 +35,13 @@ public class CategoryController {
 	public String submitCategory (String postCategory) {
 		catRepo.save(new Category(postCategory));
 		return "redirect:/allCat";
+	}
+	
+	// get specific category
+	@GetMapping("/allCat/{id}")
+	public String getCat(@PathVariable Long id, Model model) {
+		model.addAttribute("SingleCat", postRepo.findById(id).get());
+		return "specCat";
 	}
 
 }

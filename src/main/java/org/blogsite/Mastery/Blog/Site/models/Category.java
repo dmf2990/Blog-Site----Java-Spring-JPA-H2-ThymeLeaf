@@ -2,7 +2,6 @@ package org.blogsite.Mastery.Blog.Site.models;
 
 
 import java.util.Collection;
-import java.util.Arrays;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

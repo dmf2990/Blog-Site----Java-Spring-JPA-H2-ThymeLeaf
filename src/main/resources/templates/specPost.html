@@ -7,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+   <p>Specific Post Page</p> 
+
+   <ul>
+       <!--specific post details-->
+        <li th:text="${SinglePost.postTitle}"></li>
+        <li th:text="${SinglePost.body}"></li>
+        <li th:text="${SinglePost.id}"></li>
+
+        <!-- add tags, authors, categories-->
+   
+</ul>
 </body>
 </html>

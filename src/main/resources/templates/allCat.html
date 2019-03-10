@@ -16,7 +16,7 @@
         </ul>
 
         <ul th:each="category : ${Categories}">
-            <li th:text="${category.postCategory}"></li>
+            <li><a h:href="@{|/allCat/${category.id}|}" th:text="${category.postCategory}"></a></li>
         </ul>
 
     </form>

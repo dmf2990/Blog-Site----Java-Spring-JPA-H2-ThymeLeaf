@@ -10,6 +10,7 @@ import org.blogsite.Mastery.Blog.Site.models.Author;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -34,6 +35,12 @@ public class AuthorController {
 	public String submitAuthor (String authorName) {
 		authorRepo.save(new Author(authorName));
 		return "redirect:/allAuth";
+	}
+	// get specific author
+	@GetMapping("/allAuth/{id}")
+	public String getAuth(@PathVariable Long id, Model model) {
+		model.addAttribute("SingleAuth", postRepo.findById(id).get());
+		return "specAuth";
 	}
 
 }

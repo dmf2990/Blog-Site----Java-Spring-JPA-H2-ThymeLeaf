@@ -16,7 +16,7 @@
         </ul>
 
         <ul th:each="tag : ${Tags}">
-            <li th:text="${tag.tagName}"></li>
+            <li><a th:href="@{|/allTag/${tag.id}|}" th:text="${tag.tagName}"></a></li>
         </ul>
 
     </form>

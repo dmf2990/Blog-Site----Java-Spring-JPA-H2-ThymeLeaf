@@ -16,7 +16,7 @@
         </ul>
 
         <ul th:each="author : ${Authors}">
-            <li th:text="${author.authorName}"></li>
+            <li><a h:href="@{|/allAuth/${author.id}|}" th:text="${author.authorName}"></li>
         </ul>
 
     </form>

@@ -15,7 +15,7 @@ public class Post {
 	
 	@Id
 	@GeneratedValue
-	private Long postId;
+	private Long id;
 	private String postTitle;
 	private LocalDateTime date;
 	
@@ -42,8 +42,8 @@ public class Post {
 	     this.tags = Arrays.asList(tags);
 	}
 
-	public Long getPostId() {
-		return postId;
+	public Long getId() {
+		return id;
 	}
 
 	public String getPostTitle() {
@@ -72,7 +72,7 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "Post [id=" + postId + ", title=" + postTitle + ", date=" + date + ", body=" + body + ", author=" + authors
+		return "Post [id=" + id + ", title=" + postTitle + ", date=" + date + ", body=" + body + ", author=" + authors
 				+ ", tag=" + tags + ", category=" + category + "]";
 	}
 
