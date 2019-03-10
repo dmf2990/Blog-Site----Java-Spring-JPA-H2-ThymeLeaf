@@ -25,6 +25,7 @@ public class AuthorController {
 	@Resource
 	AuthorRepository authorRepo;
 	
+	//when get to allAuth pg list all authors in authorRepo
 	@GetMapping("/allAuth")
 	public String allAuth(Model model) {
 		model.addAttribute("Authors", authorRepo.findAll());
@@ -33,9 +34,18 @@ public class AuthorController {
 	
 	@PostMapping("/allAuth")
 	public String submitAuthor (String authorName) {
-		authorRepo.save(new Author(authorName));
+		
+		//if auth not exist - make new.  
+		Author author = authorRepo.findByAuthorName(authorName);
+		if (author == null) {
+			author = authorRepo.save(new Author(authorName));
+		}
+		
+		//if exists already - dont replicate
+		author = authorRepo.save(author);
 		return "redirect:/allAuth";
 	}
+	
 	// get specific author
 	@GetMapping("/allAuth/{id}")
 	public String getAuth(@PathVariable Long id, Model model) {

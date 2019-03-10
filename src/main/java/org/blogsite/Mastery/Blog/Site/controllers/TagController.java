@@ -31,9 +31,18 @@ public class TagController {
 		return "allTag";
 	}
 
+	// populate tag list on allTag page 
 	@PostMapping("/allTag")
 	public String submitTag (String tagName) {
-		tagRepo.save(new Tag(tagName));
+		
+		//if tag does not exist - make new
+		Tag tag = tagRepo.findByTagName(tagName);
+		if (tag == null) {
+			tag = tagRepo.save(new Tag(tagName));
+		}
+		
+		//if exists - dont replicate
+		tag = tagRepo.save(tag);
 		return "redirect:/allTag";
 	}
 	

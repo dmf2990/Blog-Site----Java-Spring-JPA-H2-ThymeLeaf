@@ -28,19 +28,15 @@ public class PostController {
 	@Resource
 	AuthorRepository authorRepo;
 
-	// home TH & home controller - beer
-	// links "POSTS" in Nav to all posts page
-	// also goes to allPost, find all posts in post repo, then return allPost
-	// not a collection of posts in post model, therefore do we need to find all in
-	// cat or auth or tag?
+	//when hits allPost pg finds/displays all posts on this pg.
 	@GetMapping("/allPost")
 	public String allPost(Model model) {
 		model.addAttribute("Posts", postRepo.findAll());
 		return "allPost";
 	}
 
-	// Review TH & review controller beer
 	// links "NEW BLOG" in Nav to new blog post page
+	// finds all auth, cat, tags, for drop down menu on new blog pg
 	@GetMapping("/newBlog")
 	public String newBlog(Model model) {
 		model.addAttribute("Authors", authorRepo.findAll());
@@ -52,13 +48,13 @@ public class PostController {
 	// populate that form on new page with all other posts
 	@PostMapping("/newBlog")
 	public String submitPost(String postTitle, String body, String authorName, String postCategory, String tagName) {
-
+		
+		//must instantiate objects that composed a post
 		Author author = authorRepo.findByAuthorName(authorName);
 		Category category = catRepo.findByPostCategory(postCategory);
 		Tag tag = tagRepo.findByTagName(tagName);
-
+		
 		postRepo.save(new Post(postTitle, body, author, category, tag));
-
 		return "redirect:/allPost";
 	}
 
@@ -68,8 +64,4 @@ public class PostController {
 		model.addAttribute("SinglePost", postRepo.findById(id).get());
 		return "specPost";
 	}
-	
-//	@PostMapping("/allPost/{id}")
-	
-
 }

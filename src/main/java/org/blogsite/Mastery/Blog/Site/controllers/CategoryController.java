@@ -33,7 +33,15 @@ public class CategoryController {
 	
 	@PostMapping("/allCat")
 	public String submitCategory (String postCategory) {
-		catRepo.save(new Category(postCategory));
+	
+		// if category doesnt exist - make new
+		Category category = catRepo.findByPostCategory(postCategory);	
+		if (category == null) {
+			category = catRepo.save(new Category(postCategory));	
+		}
+		
+		// if exists already - dont replicate
+		category = catRepo.save(category);
 		return "redirect:/allCat";
 	}
 	
