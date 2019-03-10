@@ -12,19 +12,37 @@
     <ul>
         <p>Title</p>
         <li><input type="text" name="postTitle"></li>
-        <p>Author</p>
-        <li><input type="text" name="authorName"></li>
-        <p>Tags</p>
-        <li><input type="text" name="tagName"></li>
-        <p>Category</p>
-        <li><input type="text" name="postCategory"></li>
+        <li>
+             <select class="" id="" name="authorName">
+                 <option value="0"> Select Author </option>
+                 <option th:each="author : ${Authors}"
+                 th:value="${author.authorName}"                     
+                 th:text="${author.authorName}"> other option</option>
+             </select>
+        </li>
+        <li>
+            <select class="" id="" name="tagName">
+                <option value="0"> Select Tag </option>
+                <option th:each="tag : ${Tags}"
+                th:value="${tag.tagName}"                    
+                th:text="${tag.tagName}"> other option</option>
+            </select>
+        </li>
+        <li>
+            <select class="" id="" name="postCategory">
+                <option value="0"> Select Category </option>
+                <option th:each="category : ${Categories}"
+                th:value="${category.postCategory}"                    
+                th:text="${category.postCategory}"> other option</option>
+            </select>
+        </li>
         <p>Body</p>
         <li><input type="text" name="body"></li>
         
         <li class=""> <button type="submit">Submit</button></li>
-
-    </ul>
     </form>
+
+    
 
 </body>
 </html>

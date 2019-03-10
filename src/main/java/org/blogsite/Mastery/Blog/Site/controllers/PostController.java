@@ -42,7 +42,10 @@ public class PostController {
 	// Review TH & review controller beer
 	// links "NEW BLOG" in Nav to new blog post page
 	@GetMapping("/newBlog")
-	public String newBlog() {
+	public String newBlog(Model model) {
+		model.addAttribute("Authors", authorRepo.findAll());
+		model.addAttribute("Categories", catRepo.findAll());
+		model.addAttribute("Tags", tagRepo.findAll());
 		return "newBlog";
 	}
 
