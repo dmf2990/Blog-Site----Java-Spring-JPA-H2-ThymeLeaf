@@ -49,7 +49,7 @@ public class TagController {
 	// get specific tag
 	@GetMapping("/allTag/{id}")
 	public String getTag(@PathVariable Long id, Model model) {
-		model.addAttribute("SingleTag", postRepo.findById(id).get());
+		model.addAttribute("SingleTag", tagRepo.findById(id).get());
 		return "specTag";
 	}
 }

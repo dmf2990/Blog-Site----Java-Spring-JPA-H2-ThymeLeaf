@@ -45,7 +45,7 @@ public class PostController {
 		return "newBlog";
 	}
 
-	// populate that form on new page with all other posts
+	// inject user input from form to make new post on all post pg
 	@PostMapping("/newBlog")
 	public String submitPost(String postTitle, String body, String authorName, String postCategory, String tagName) {
 		

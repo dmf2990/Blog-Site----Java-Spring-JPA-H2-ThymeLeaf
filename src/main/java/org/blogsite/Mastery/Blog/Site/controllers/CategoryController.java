@@ -31,6 +31,7 @@ public class CategoryController {
 		return "allCat";
 	}
 	
+	//make new category
 	@PostMapping("/allCat")
 	public String submitCategory (String postCategory) {
 	
@@ -48,8 +49,15 @@ public class CategoryController {
 	// get specific category
 	@GetMapping("/allCat/{id}")
 	public String getCat(@PathVariable Long id, Model model) {
-		model.addAttribute("SingleCat", postRepo.findById(id).get());
+		model.addAttribute("SingleCat", catRepo.findById(id).get());
 		return "specCat";
 	}
+	
+	//navigates to the page of a specific category and shows all parks in the category
+//	@GetMapping("/categories/{categoryId}")
+//	public String getParksByCategory(@PathVariable Long categoryId, Model model) {
+//		model.addAttribute("category", categories.findAllById(categoryId));
+//		return "/categories/specificCategory";	
+//	}
 
 }

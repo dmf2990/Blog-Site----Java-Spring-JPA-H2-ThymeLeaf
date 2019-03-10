@@ -49,7 +49,7 @@ public class AuthorController {
 	// get specific author
 	@GetMapping("/allAuth/{id}")
 	public String getAuth(@PathVariable Long id, Model model) {
-		model.addAttribute("SingleAuth", postRepo.findById(id).get());
+		model.addAttribute("SingleAuth", authorRepo.findById(id).get());
 		return "specAuth";
 	}
 

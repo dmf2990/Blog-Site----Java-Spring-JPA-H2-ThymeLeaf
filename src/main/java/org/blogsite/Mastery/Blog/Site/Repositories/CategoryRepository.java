@@ -11,5 +11,6 @@ public interface CategoryRepository extends CrudRepository<Category, Long>{
 	
 	Category findByPostCategory(String postCategory);
 	Optional<Category> findById(Long id);
+	Object findAllById(Long id);
 
 }
