@@ -57,7 +57,7 @@ public class PostController {
 		postRepo.save(new Post(postTitle, body, author, category, tag));
 		return "redirect:/allPost";
 	}
-
+	
 	// get specific post
 	@GetMapping("/allPost/{id}")
 	public String getPost(@PathVariable Long id, Model model) {
@@ -69,6 +69,7 @@ public class PostController {
 		return "specPost";
 	}
 
+	
 	// add more tags/auth to specific post pg
 //	@PostMapping("/allPost/{id}")
 //	public String submitAnotherTagOrAuth (@PathVariable Long id, String tagName, String authorName) {

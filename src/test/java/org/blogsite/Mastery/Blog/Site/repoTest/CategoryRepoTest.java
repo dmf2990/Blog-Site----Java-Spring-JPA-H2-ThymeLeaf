@@ -1,45 +1,41 @@
 package org.blogsite.Mastery.Blog.Site.repoTest;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
+import javax.annotation.Resource;
+
+import org.blogsite.Mastery.Blog.Site.Repositories.CategoryRepository;
+import org.blogsite.Mastery.Blog.Site.models.Category;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 public class CategoryRepoTest {
 
-}
+	@RunWith(SpringJUnit4ClassRunner.class)
+	@DataJpaTest
+	public class CategoryTest {
 
-//package org.wecancodeit.publishinghouse.repositories;
-//
-//import static org.hamcrest.Matchers.is;
-//import static org.junit.Assert.assertThat;
-//
-//import javax.annotation.Resource;
-//
-//import org.hamcrest.Matchers;
-//import org.junit.Assert;
-//import org.junit.Test;
-//import org.junit.runner.RunWith;
-//import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-//import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-//import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-//import org.wecancodeit.publishinghouse.models.Book;
-//
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@DataJpaTest
-//public class BookTest {
-//	
-//	@Resource
-//	private TestEntityManager entityManager;
-//	 
-//	@Resource 
-//	private BookRepository bookRepo;
-//
-//	@Test
-//	public void shouldSaveAndLoadBook() {
-//	    Book book = bookRepo.save(new Book("Head First Java", "Kathy Sierra", "Tech"));
-//	 
-//	    entityManager.persist(book);
-//	    entityManager.flush(); 
-//	    entityManager.clear();
-//	    
-//	    Book bookFromDatabase = bookRepo.findByTitle("Head First Java");
-//	 
-//	    assertThat(bookFromDatabase.getTitle(), is("Head First Java"));
-//	}
-//}
+		@Resource
+		private TestEntityManager entityManager;
+
+		@Resource
+		private CategoryRepository categoryRepo;
+
+		@Test
+		public void shouldSaveAndLoadCategory() {
+			Category category = categoryRepo.save(new Category("Kathy Sierra"));
+
+			entityManager.persist(category);
+			entityManager.flush();
+			entityManager.clear();
+
+			Category categoryFromDatabase = categoryRepo.findByPostCategory("Head First Java");
+
+			assertThat(categoryFromDatabase.getPostCategory(), is("Head First Java"));
+		}
+	}
+}

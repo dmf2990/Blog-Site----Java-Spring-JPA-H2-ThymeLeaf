@@ -26,7 +26,7 @@ public class AuthorRepoTest {
 		private AuthorRepository authorRepo;
 
 		@Test
-		public void shouldSaveAndLoadBook() {
+		public void shouldSaveAndLoadAuthor() {
 			Author author = authorRepo.save(new Author("Kathy Sierra"));
 
 			entityManager.persist(author);
