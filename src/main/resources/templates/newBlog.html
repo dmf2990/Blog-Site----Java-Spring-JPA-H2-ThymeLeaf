@@ -1,55 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>THIS IS WHERE YOUR WILL PUT A NEW BLOG POST PUSSY ASS BITCH</p>
-    <form action="/newBlog" method="POST">
-    <ul>
-        <p>Title</p>
-        <li><input type="text" name="postTitle"></li>
-        
-        <p>Body</p>
-        <li><input type="text" name="body"></li>
-        
-        <li>
-             <select class="" id="" name="authorName">
-                 <option value="0"> Select Author </option>
-                 <option th:each="author : ${Authors}"
-                 th:value="${author.authorName}"                     
-                 th:text="${author.authorName}"> other option</option>
-             </select>
-        </li>
-        <li>
-            <select class="" id="" name="tagName">
-                <option value="0"> Select Tag </option>
-                <option th:each="tag : ${Tags}"
-                th:value="${tag.tagName}"                    
-                th:text="${tag.tagName}"> other option</option>
-            </select>
-        </li>
-        <li>
-            <select class="" id="" name="postCategory">
-                <option value="0"> Select Category </option>
-                <option th:each="category : ${Categories}"
-                th:value="${category.postCategory}"                    
-                th:text="${category.postCategory}"> other option</option>
-            </select>
-        </li>
-       
-        <li class=""> <button type="submit">Submit</button></li>
-     </form>
-
-    
-
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,9 +14,9 @@
     <header class="main-header"> 
       <label for="toggle-nav" class="menu-button"> 
         <span></span>
-      </label><!-- close menu-button -->
+      </label>
       <h1 class="main-header__title">VOX</h1>
-    </header><!--close main-header -->
+    </header>
     <input type="checkbox" class="toggle-nav" id="toggle-nav">
        <nav class="nav">
         <ul class="nav-list">

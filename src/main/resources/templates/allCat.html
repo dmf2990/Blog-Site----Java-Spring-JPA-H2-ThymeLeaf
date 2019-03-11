@@ -1,28 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>HELL YEAH MOTHER FUCKER</p>
-    <form action="/allCat" method="POST">
-        <ul>
-            <p>Add Category</p>
-            <li><input type="text" name="postCategory"></li>
-            <li class=""> <button type="submit">Submit</button></li>
-        </ul>
-
-        <ul th:each="category : ${Categories}">
-            <li><a th:href="@{|/allCat/${category.id}|}" th:text="${category.postCategory}"></a></li>
-        </ul>
-
-    </form>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,9 +15,9 @@
     <header class="main-header"> 
       <label for="toggle-nav" class="menu-button"> 
         <span></span>
-      </label><!-- close menu-button -->
+      </label>
       <h1 class="main-header__title"><a href="/allPost">VOX</a></h1>
-    </header><!--close main-header -->
+    </header>
     <input type="checkbox" class="toggle-nav" id="toggle-nav">
        <nav class="nav">
         <ul class="nav-list">
@@ -59,7 +34,19 @@
     </section>
     <section class="main-section">
       <div class="column-left"> 
-        <div class="column-left__box">BOXLEFT</div>
+        <div class="column-left__box">BOXLEFT
+            <form action="/allCat" method="POST">
+              <ul>
+                  <li><input type="text" name="postCategory" placeholder="Add Category"></li>
+                  <li class=""> <button type="submit">Submit</button></li>
+              </ul>
+      
+              <ul th:each="category : ${Categories}">
+                  <li><a th:href="@{|/allCat/${category.id}|}" th:text="${category.postCategory}"></a></li>
+              </ul>
+      
+          </form>
+        </div>
       </div>
       
       <div class="column-middle">
@@ -74,6 +61,6 @@
       <i class="far fa-copyright"></i> 
       <p>vo2max inc.</p>
     </footer>
-  </main><!--close main -->
+  </main>
 </body>
 </html>

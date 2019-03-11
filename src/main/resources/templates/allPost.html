@@ -1,24 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <h1>This is All Post Page</h1>
-    </header>
-
-        <ul th:each="post : ${Posts}">
-                    <li><a th:href="@{|/allPost/${post.id}|}" th:text="${post.postTitle}"></a></li>
-                    <li th:text="${post.body}"></li>
-
-        
-</body>
-</html> --> 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,9 +15,9 @@
     <header class="main-header"> 
       <label for="toggle-nav" class="menu-button"> 
         <span></span>
-      </label><!-- close menu-button -->
+      </label>
       <h1 class="main-header__title">VOX</h1>
-    </header><!--close main-header -->
+    </header>
     <input type="checkbox" class="toggle-nav" id="toggle-nav">
        <nav class="nav">
         <ul class="nav-list">
@@ -55,12 +34,17 @@
    </section>  
     <section class="post-section">
         <p>Posts will live in here.</p>
+        <ul th:each="post : ${Posts}">
+            <li><a th:href="@{|/allPost/${post.id}|}" th:text="${post.postTitle}"></a></li>
+            <li th:text="${post.body}"></li>
+            <p>date</p>
+        </ul>
     </section>
    
     <footer class="footer">
       <i class="far fa-copyright"></i> 
       <p>vo2max inc.</p>
     </footer>
-  </main><!--close main -->
+  </main>
 </body>
 </html>

@@ -1,29 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>THIS IS TEST TEXT</p>
-    <form action="/allAuth" method="POST">
-        <ul>
-            <p>Add Author</p>
-            <li><input type="text" name="authorName"></li>
-            <li class=""> <button type="submit">Submit</button></li>
-        </ul>
-
-        <ul th:each="author : ${Authors}">
-            <li><a th:href="@{|/allAuth/${author.id}|}" th:text="${author.authorName}"></li>
-        </ul>
-
-    </form>
-    
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,7 +34,17 @@
     </section>
     <section class="main-section">
       <div class="column-left"> 
-        <div class="column-left__box">BOXLEFT</div>
+        <div class="column-left__box">BOXLEFT
+            <form action="/allAuth" method="POST">
+                <ul>
+                    <li><input type="text" name="authorName" placeholder="Add an Author"></li>
+                    <li class=""> <button type="submit">Submit</button></li>
+                    </ul>
+                    <ul th:each="author : ${Authors}">
+                    <li><a th:href="@{|/allAuth/${author.id}|}" th:text="${author.authorName}"></li>
+                </ul>
+            </form>
+        </div>
       </div>
       
       <div class="column-middle">
