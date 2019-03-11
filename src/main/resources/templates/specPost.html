@@ -16,8 +16,9 @@
         <p>date</p>
    </ul>
 
-<form action="/specPost" method="POST">
-   <li>
+<form th:action="@{|/allPost/${SinglePost.id}|}" method="POST">
+<ul> 
+    <li>
         <select class="" id="" name="authorName">
             <option value="0"> Select Author </option>
             <option th:each="author : ${Authors}"
@@ -26,9 +27,11 @@
         </select>
       </li>
    <li class=""> <button type="submit">Submit</button></li>
+</ul>
 </form>
 
-<form action="/specPost" method="POST"></form>
+<form th:action="@{|/allPost/${SinglePost.id}|}" method="POST"></form>
+<ul>
     <li>
         <select class="" id="" name="tagName">
             <option value="0"> Select Tag </option>
@@ -38,6 +41,7 @@
         </select>
       </li>
     <li class=""> <button type="submit">Submit</button></li>
+</ul>
 </form>
 
 </body>

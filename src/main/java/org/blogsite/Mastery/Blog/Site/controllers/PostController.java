@@ -28,7 +28,7 @@ public class PostController {
 	@Resource
 	AuthorRepository authorRepo;
 
-	//when hits allPost pg finds/displays all posts on this pg.
+	// when hits allPost pg finds/displays all posts on this pg.
 	@GetMapping("/allPost")
 	public String allPost(Model model) {
 		model.addAttribute("Posts", postRepo.findAll());
@@ -48,12 +48,12 @@ public class PostController {
 	// inject user input from form to make new post on all post pg
 	@PostMapping("/newBlog")
 	public String submitPost(String postTitle, String body, String authorName, String postCategory, String tagName) {
-		
-		//must instantiate objects that composed a post
+
+		// must instantiate objects that composed a post
 		Author author = authorRepo.findByAuthorName(authorName);
 		Category category = catRepo.findByPostCategory(postCategory);
 		Tag tag = tagRepo.findByTagName(tagName);
-		
+
 		postRepo.save(new Post(postTitle, body, author, category, tag));
 		return "redirect:/allPost";
 	}
@@ -62,8 +62,30 @@ public class PostController {
 	@GetMapping("/allPost/{id}")
 	public String getPost(@PathVariable Long id, Model model) {
 		Post foundPost = postRepo.findById(id).get();
-		model.addAttribute("SinglePost", foundPost);		
+		// DROP DOWN on spec post pg - populate auth & tags
+		model.addAttribute("Authors", authorRepo.findAll());
+		model.addAttribute("Tags", tagRepo.findAll());
+		model.addAttribute("SinglePost", foundPost);
 		return "specPost";
 	}
-	
+
+	// add more tags/auth to specific post pg
+//	@PostMapping("/allPost/{id}")
+//	public String submitAnotherTagOrAuth (@PathVariable Long id, String tagName, String authorName) {
+//		Post post = postRepo.findById(id).get();
+//		
+//	if (tagName != null) {
+//		Tag tag = tagRepo.save(new Tag (tagName));
+//		post.addNewTag(tag);
+//		postRepo.save(post);
+//		
+//	} else if(authorName != null) {
+//		Author author = authorRepo.save(new Author(authorName));
+//		post.addNewAuthor(author);
+//		postRepo.save(post);
+//	}
+//	
+//	return"redirect:/allPost/{id}";
+//}
+
 }

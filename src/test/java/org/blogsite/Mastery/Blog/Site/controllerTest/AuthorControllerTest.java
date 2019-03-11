@@ -1,52 +1,46 @@
 package org.blogsite.Mastery.Blog.Site.controllerTest;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+
+import org.blogsite.Mastery.Blog.Site.Repositories.AuthorRepository;
+import org.blogsite.Mastery.Blog.Site.controllers.AuthorController;
+import org.blogsite.Mastery.Blog.Site.models.Author;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.ui.Model;
+
 
 public class AuthorControllerTest {
-
+	 
+    @InjectMocks
+    private AuthorController underTest;
+ 
+    @Mock
+    private AuthorRepository authorRepo;
+ 
+    @Mock
+    private Author author;
+    
+	@Mock
+	private Model model;
+ 
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+    
+    @Test
+    public void shouldAddAuthorToModel() throws Exception {
+        Long id = 1L;
+        when(authorRepo.findById(id)).thenReturn(Optional.of(author));
+ 
+        underTest.getAuth(id, model);
+ 
+        verify(model).addAttribute("author", author);
+    }
 }
-
-//
-//package org.wecancodeit.publishinghouse.controllers;
-//
-//import static org.mockito.Mockito.verify;
-//import static org.mockito.Mockito.when;
-//
-//import java.util.Optional;
-//
-//import org.junit.Before;
-//import org.junit.Test;
-//import org.mockito.InjectMocks;
-//import org.mockito.Mock;
-//import org.mockito.MockitoAnnotations;
-//import org.springframework.ui.Model;
-//import org.wecancodeit.publishinghouse.models.Book;
-//import org.wecancodeit.publishinghouse.repositories.BookRepository;
-//
-//public class BookControllerTest {
-//	 
-//    @InjectMocks
-//    private BookController underTest;
-// 
-//    @Mock
-//    private BookRepository bookRepo;
-// 
-//    @Mock
-//    private Book book;
-//    
-//	@Mock
-//	private Model model;
-// 
-//    @Before
-//    public void setUp() {
-//        MockitoAnnotations.initMocks(this);
-//    }
-//    
-//    @Test
-//    public void shouldAddBookToModel() throws Exception {
-//        Long bookId = 1L;
-//        when(bookRepo.findById(bookId)).thenReturn(Optional.of(book));
-// 
-//        underTest.getBook(bookId, model);
-// 
-//        verify(model).addAttribute("book", book);
-//    }
-//}
