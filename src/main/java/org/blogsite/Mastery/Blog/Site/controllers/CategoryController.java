@@ -47,17 +47,11 @@ public class CategoryController {
 	}
 	
 	// get specific category
+	// use SingleCat to see all posts in specific cat: line 19 
 	@GetMapping("/allCat/{id}")
 	public String getCat(@PathVariable Long id, Model model) {
 		model.addAttribute("SingleCat", catRepo.findById(id).get());
 		return "specCat";
 	}
-	
-	//navigates to the page of a specific category and shows all parks in the category
-//	@GetMapping("/categories/{categoryId}")
-//	public String getParksByCategory(@PathVariable Long categoryId, Model model) {
-//		model.addAttribute("category", categories.findAllById(categoryId));
-//		return "/categories/specificCategory";	
-//	}
 
 }

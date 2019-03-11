@@ -61,7 +61,9 @@ public class PostController {
 	// get specific post
 	@GetMapping("/allPost/{id}")
 	public String getPost(@PathVariable Long id, Model model) {
-		model.addAttribute("SinglePost", postRepo.findById(id).get());
+		Post foundPost = postRepo.findById(id).get();
+		model.addAttribute("SinglePost", foundPost);		
 		return "specPost";
 	}
+	
 }

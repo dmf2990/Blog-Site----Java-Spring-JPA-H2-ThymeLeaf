@@ -10,6 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface PostRepository extends CrudRepository<Post, Long>{
 	
 	Post findByPostTitle(String postTitle);
-
 	Optional<Post> findById(Long id);
 }
