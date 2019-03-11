@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/allPostIndividualPost.css">
+    <title>VOX</title>
+  </head>
 <body>
-    
+  <main class="main">
+    <header class="main-header"> 
+      <label for="toggle-nav" class="menu-button"> 
+        <span></span>
+      </label>
+      <h1 class="main-header__title">VOX</h1>
+    </header>
+    <input type="checkbox" class="toggle-nav" id="toggle-nav">
+       <nav class="nav">
+        <ul class="nav-list">
+            <li class="home"><a href="/">HOME</a></li>
+            <li class="posts"><a href="/allPost">POSTS</a></li>
+            <li class="cats"><a href="/allCat">CATEGORIES</a></li>
+            <li class="auths"><a href="/allAuth">AUTHORS</a></li>
+            <li class="tags"><a href="/allTag">TAGS</a></li>
+            <li class="new"><a href="/newBlog"></a>NEW POST</li>
+        </ul>
+      </nav>
+   <section class="post-section__back">
+      <p class="post-section__title">VO2MAX</p>
+   </section>  
+    <section class="post-section">
+        <p>Posts will live in here.</p>
+        <ul th:each="post : ${Posts}">
+            <li><a th:href="@{|/allPost/${post.id}|}" th:text="${post.postTitle}"></a></li>
+            <li th:text="${post.body}"></li>
+            <p>date</p>
+        </ul>
+    </section>
+   
+    <footer class="footer">
+      <i class="far fa-copyright"></i> 
+      <p>vo2max inc.</p>
+    </footer>
+  </main>
 </body>
 </html>

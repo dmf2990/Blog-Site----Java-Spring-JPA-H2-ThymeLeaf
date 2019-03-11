@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/submitPost.css">
+    <title>Document</title>
+</head>
+<body>
+  
+  <main class="main">
+    <header class="main-header"> 
+      <label for="toggle-nav" class="menu-button"> 
+        <span></span>
+      </label>
+      <h1 class="main-header__title">VOX</h1>
+    </header>
+    <input type="checkbox" class="toggle-nav" id="toggle-nav">
+       <nav class="nav">
+        <ul class="nav-list">
+            <li class="home"><a href="/">HOME</a></li>
+            <li class="posts"><a href="/allPost">POSTS</a></li>
+            <li class="cats"><a href="/allCat">CATEGORIES</a></li>
+            <li class="auths"><a href="/allAuth">AUTHORS</a></li>
+            <li class="tags"><a href="/allTag">TAGS</a></li>
+            <li class="new"><a href="/newBlog">NEW POST</a></li>
+        </ul>
+      </nav>
+      <section class="form-section">
+        <div class="form">
+        <form action="/newBlog" method="POST">
+          <ul>
+          <li><input class="title-box" type="text" name="postTitle" placeholder="Title..."></li>
+          <li>
+             <select class="author-box" id="" name="authorName">
+               <option value="0"> Select Author </option>
+               <option th:each="author : ${Authors}"
+               th:value="${author.authorName}"                     
+               th:text="${author.authorName}"> other option</option>
+             </select>
+          </li>
+          <li>
+              <select class="tag-box" id="" name="tagName">
+                  <option value="0"> Select Tag </option>
+                  <option th:each="tag : ${Tags}"
+                  th:value="${tag.tagName}"                    
+                  th:text="${tag.tagName}"> other option</option>
+              </select>
+          </li>
+          <li>
+              <select class="cat-box" id="" name="postCategory">
+                  <option value="0"> Select Category </option>
+                  <option th:each="category : ${Categories}"
+                  th:value="${category.postCategory}"                    
+                  th:text="${category.postCategory}"> other option</option>
+              </select>
+          </li>
+            <li ><textarea class="blog-area" rows="8" Col="" placeholder="Write your blog here..."></textarea></li>
+          <li class="submit"> <button type="submit">Submit</button></li>
+        </form>
+        </div>
+       </section>
+        
+        
+        
+        
+        
+        
+      <footer class="footer">
+      <i class="far fa-copyright"></i> 
+      <p>vo2max inc.</p>
+    </footer>
+  </main><!--close main -->
+</body>
+</html>
+
+</body>
+</html>

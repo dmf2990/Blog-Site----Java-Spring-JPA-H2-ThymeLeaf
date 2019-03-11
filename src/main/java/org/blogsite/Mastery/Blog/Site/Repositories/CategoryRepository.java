@@ -1,5 +1,14 @@
 package org.blogsite.Mastery.Blog.Site.Repositories;
 
-public class CategoryRepository {
+import java.util.Optional;
 
+import org.blogsite.Mastery.Blog.Site.models.Category;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CategoryRepository extends CrudRepository<Category, Long>{
+	
+	Category findByPostCategory(String postCategory);
+	Optional<Category> findById(Long id);
 }

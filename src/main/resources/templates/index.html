@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+  	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>VOX</title>
+  </head>
 <body>
-    
+  <main class="main">
+    <header class="main-header"> 
+      <label for="toggle-nav" class="menu-button"> 
+        <span></span>
+      </label>
+      <h1 class="main-header__title"><a href="/allPost">VOX</a></h1>
+    </header>
+    <input type="checkbox" class="toggle-nav" id="toggle-nav">
+       <nav class="nav">
+        <ul class="nav-list">
+          <li class="home"><a href="/">HOME</a></li>
+          <li class="posts"><a href="/allPost">POSTS</a></li>
+          <li class="cats"><a href="/allCat">CATEGORIES</a></li>
+          <li class="auths"><a href="/allAuth">AUTHORS</a></li>
+          <li class="tags"><a href="/allTag">TAGS</a></li>
+          <li class="new"><a href="/newBlog">NEW POST</a></li>
+        </ul>
+      </nav>
+   <div class="both">
+    <section class="grid">
+        <div class="row1" id="rows">
+          <ul class="row1__list">
+            <li class="join">Join VO2MAX</li>
+            <li class="signup">Sign Up</li>
+            <li class="login">Log In</li>
+            <li class="mission"> Our mission is to allow you to share</li> 
+            <li class="mission2">your fitness journey with they world,               </li>
+            <li class="mission3">and be inspired by others.</li>
+          </ul>
+        </div>
+        <div class="row2" id="rows">
+          <p class="row2__title">VO2MAX</p>
+        </div>
+      </div>
+    </section> 
+    </div>
+    <footer class="footer">
+      <i class="far fa-copyright"></i> 
+      <p>vo2max inc.</p>
+    </footer>
+  </main>
 </body>
 </html>

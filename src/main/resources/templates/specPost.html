@@ -7,6 +7,42 @@
     <title>Document</title>
 </head>
 <body>
-    
+   <p>Specific Post Page</p> 
+   <ul th:each="post : ${SinglePost}">
+        <li th:text="${post.postTitle}"></li>
+        <li th:text="${post.body}"></li>
+        <li th:text="${post.id}"></li>
+        <li th:each="author : ${post.authors}" th:text="${author.authorName}"></li>
+        <li th:each="tag : ${post.tags}" th:text="${tag.tagName}"></li>
+   </ul>
+        <p>date</p>
+   
+<form th:action="@{|/allPost/${SinglePost.id}/author|}" method="POST">
+<ul> 
+    <li>
+        <select class="" id="" name="authorName">
+            <option value="0"> Select Author </option>
+            <option th:each="author : ${Authors}"
+            th:value="${author.authorName}"                     
+            th:text="${author.authorName}"> other option</option>
+        </select>
+      </li>
+   <li class=""> <button type="submit">Submit</button></li>
+</ul>
+</form>
+<!--so form completed takes to run code in controller which redirects to actual page-->
+<form th:action="@{|/allPost/${SinglePost.id}/tag|}" method="POST">
+   <ul>
+      <li>
+        <select class="" id="" name="tagName">
+            <option value="0"> Select Tag </option>
+            <option th:each="tag : ${Tags}"
+            th:value="${tag.tagName}"                    
+            th:text="${tag.tagName}"> other option</option>
+        </select>
+      </li>
+    <li class=""> <button type="submit">Submit</button></li>
+  </ul>
+</form>
 </body>
 </html>

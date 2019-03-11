@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p>Specific Tag Page</p> 
+        <ul th:each="post : ${SingleTag.posts}">
+                <li th:text="${post.postTitle}"></li> 
+                <li th:text="${post.body}"></li>
+                <p>date</p>
+        </ul>
 </body>
 </html>

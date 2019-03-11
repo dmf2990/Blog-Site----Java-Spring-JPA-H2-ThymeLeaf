@@ -3,10 +3,6 @@
     margin: 0;
     padding: 0;
   }
-  
-  ul {
-    list-style-type: none;
-  }
 
   a {
     text-decoration: none;
@@ -15,6 +11,12 @@
 
   a:hover {
     color: #000000;
+  }
+
+
+  
+  ul {
+    list-style-type: none;
   }
   
   .main-header {
@@ -34,8 +36,8 @@
   }
 
   .main-header__title a {
-    color:#bc8731
-}
+      color:#bc8731
+  }
 
   .main-header__title a:hover {
     color:#e8e8e8;
@@ -56,7 +58,6 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
-    color: #e8e8e8;
   }
   
   .nav-list {
@@ -155,6 +156,96 @@
     width: 2.5rem;
   }
   
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .row1 {
+    background-Color: #808182;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .join {
+    font-size: 1.3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    color: #e8e8e8;
+  }
+  
+  .signup {
+    font-size: 1.3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    border-radius: 100px;
+    color: #e8e8e8;
+  }
+  
+  .signup:hover {
+    background-color: rgba(232,232,232, .35);
+    cursor: pointer;
+  }
+  
+  .login {
+    font-size: 1.3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    border: 1px solid #e8e8e8;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 100px;
+    color: #e8e8e8;
+  }
+  
+  .login:hover {
+    background-color: rgba(232,232,232, .35);
+    cursor: pointer;
+  }
+  
+  .mission {
+    margin-top: 3rem;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .mission2 {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .mission3 {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .row2 {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .row2__title {
+    color: #bc8731;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 6rem
+  }
+  
+  #rows {
+    height: 100vh
+  }
+  
   .footer {
     background-color: #e8e8e8;
     height:2.5rem;
@@ -172,4 +263,28 @@
   }
   
   @media screen and (max-width: 600px) {
+    .both {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+    
+    .row1 {
+    background-Color: #808182;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+  }
+    
+    .row2 {
+     background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+  }
   }

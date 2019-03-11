@@ -7,6 +7,24 @@
     <title>Document</title>
 </head>
 <body>
+
+        <p>Specific Category Page</p> 
+
+        <ul>
+             <li th:text="${SingleCat.postCategory}"></li>
+             <P>This is a description of this is a Cat and why it's cool. This is a description of this tag and why it's cool. This is a description of this tag and why it's cool. This is a description of this tag and why it's cool. This is a description of this tag and why it's cool.</P>
+        </ul>
+          
+   
+        <ul th:each="post : ${SingleCat.posts}">
+            <li th:text="${post.postTitle}"></li>  
+            <li th:text="${post.body}"></li>
+            <p>date</p>
+        </ul>
+ 
+
+     
+     
     
 </body>
 </html>
