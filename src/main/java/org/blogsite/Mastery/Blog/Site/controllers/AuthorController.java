@@ -53,7 +53,5 @@ public class AuthorController {
 		model.addAttribute("SingleAuth", authorRepo.findById(id).get());
 		return "specAuth";
 	}
-	
-	
 
 }

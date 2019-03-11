@@ -1,0 +1,290 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #e8e8e8;
+  }
+
+  a:hover {
+    color: #000000;
+  }
+
+
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  .main-header {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  .main-header__title {
+    margin-right: 1rem;
+    color: #bc8731;
+    font-family: 'Playfair Display SC', serif;
+  }
+
+  .main-header__title a {
+      color:#bc8731
+  }
+
+  .main-header__title a:hover {
+    color:#e8e8e8;
+}
+  
+  .main-header__title:hover {
+    color: #e8e8e8;
+    cursor: pointer;
+  }
+  
+  .nav {
+    display: flex;
+    position: fixed;
+    top: 3.5rem;
+    width: 50%;
+    z-index: -1000;
+    background-color: rgba(128,129,130, .9);
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-list {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    line-height: 5rem;
+    color: #e8e8e8;
+  }
+  
+  .home:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .posts:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .cats:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .auths:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .tags:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .new:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .toggle-nav:checked~nav {
+    z-index: 1000;
+  }
+  
+  .toggle-nav {
+    display: none;
+  }
+  
+  .main-header__logo {
+    margin-left: 1rem;
+  }
+  
+  .menu-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+  
+  .menu-button span,
+  .menu-button span::before,
+  .menu-button span::after {
+    display: block;
+    background: #e8e8e8;
+    height: 4px;
+    width: 1.5rem;
+    border-radius: 100px;
+    position: absolute;
+  }
+  
+  .menu-button span::before,
+  .menu-button span::after {
+    content:'';
+    position: absolute;
+  }
+  
+  .menu-button span::before {
+    bottom: 10px;
+    width: 2.5rem;
+    
+  }
+  
+  .menu-button span::after {
+    top: 10px;
+    width: 2rem;
+  }
+  
+  .menu-button span:hover {
+    width: 2.5rem;
+    cursor: pointer;
+  }
+  
+  .menu-button span:hover::after {
+    width: 2.5rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .row1 {
+    background-Color: #808182;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .join {
+    font-size: 1.3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    color: #e8e8e8;
+  }
+  
+  .signup {
+    font-size: 1.3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    border-radius: 100px;
+    color: #e8e8e8;
+  }
+  
+  .signup:hover {
+    background-color: rgba(232,232,232, .35);
+    cursor: pointer;
+  }
+  
+  .login {
+    font-size: 1.3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    border: 1px solid #e8e8e8;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 100px;
+    color: #e8e8e8;
+  }
+  
+  .login:hover {
+    background-color: rgba(232,232,232, .35);
+    cursor: pointer;
+  }
+  
+  .mission {
+    margin-top: 3rem;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .mission2 {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .mission3 {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .row2 {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .row2__title {
+    color: #bc8731;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 6rem
+  }
+  
+  #rows {
+    height: 100vh
+  }
+  
+  .footer {
+    background-color: #e8e8e8;
+    height:2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.3rem;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+  
+  .far {
+    margin-right: 1rem;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .both {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+    
+    .row1 {
+    background-Color: #808182;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+  }
+    
+    .row2 {
+     background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+  }
+  }
