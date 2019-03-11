@@ -13,10 +13,16 @@
         <li th:text="${post.postTitle}"></li>
         <li th:text="${post.body}"></li>
         <li th:text="${post.id}"></li>
-        <p>date</p>
+        <li th:each="author : ${post.authors}" th:text="${author.authorName}"></li>
+        <li th:each="tag : ${post.tags}" th:text="${tag.tagName}"></li>
    </ul>
 
-<form th:action="@{|/allPost/${SinglePost.id}|}" method="POST">
+
+
+        <p>date</p>
+   
+
+<form th:action="@{|/allPost/${SinglePost.id}/author|}" method="POST">
 <ul> 
     <li>
         <select class="" id="" name="authorName">
@@ -30,7 +36,7 @@
 </ul>
 </form>
 
-<form th:action="@{|/allPost/${SinglePost.id}|}" method="POST"></form>
+<form th:action="@{|/allPost/${SinglePost.id}/tag|}" method="POST"></form>
 <ul>
     <li>
         <select class="" id="" name="tagName">

@@ -9,5 +9,4 @@ public class MasteryBlogSiteApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MasteryBlogSiteApplication.class, args);
 	}
-
 }
