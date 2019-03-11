@@ -12,8 +12,4 @@ public interface AuthorRepository extends CrudRepository<Author, Long> {
 
 	Author findByAuthorName(String authorName);
 	Optional<Author> findById(Long id);
-	//so we can find all authors for single post
-	Post findAllById(Long id);
-
-	
 }

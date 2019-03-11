@@ -13,8 +13,32 @@
         <li th:text="${post.postTitle}"></li>
         <li th:text="${post.body}"></li>
         <li th:text="${post.id}"></li>
+        <p>date</p>
    </ul>
 
-   
+<form action="/specPost" method="POST">
+   <li>
+        <select class="" id="" name="authorName">
+            <option value="0"> Select Author </option>
+            <option th:each="author : ${Authors}"
+            th:value="${author.authorName}"                     
+            th:text="${author.authorName}"> other option</option>
+        </select>
+      </li>
+   <li class=""> <button type="submit">Submit</button></li>
+</form>
+
+<form action="/specPost" method="POST"></form>
+    <li>
+        <select class="" id="" name="tagName">
+            <option value="0"> Select Tag </option>
+            <option th:each="tag : ${Tags}"
+            th:value="${tag.tagName}"                    
+            th:text="${tag.tagName}"> other option</option>
+        </select>
+      </li>
+    <li class=""> <button type="submit">Submit</button></li>
+</form>
+
 </body>
 </html>
