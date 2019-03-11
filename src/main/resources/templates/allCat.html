@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>HELL YEAH MOTHER FUCKER</p>
+    <form action="/allCat" method="POST">
+        <ul>
+            <p>Add Category</p>
+            <li><input type="text" name="postCategory"></li>
+            <li class=""> <button type="submit">Submit</button></li>
+        </ul>
+
+        <ul th:each="category : ${Categories}">
+            <li><a th:href="@{|/allCat/${category.id}|}" th:text="${category.postCategory}"></a></li>
+        </ul>
+
+    </form>
+</body>
+</html>

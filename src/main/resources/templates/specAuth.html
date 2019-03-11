@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <p>Specific Author Page</p> 
+
+            <ul>
+            <!--specific post details-->
+                 <li th:text="${SingleAuth.authorName}"></li>
+            </ul> 
+            
+             <!--adding all posts to single author's pg-->
+             <ul th:each="post : ${SingleAuth.posts}">
+                    <li th:text="${post.postTitle}"></li> 
+                    <li th:text="${post.body}"></li>
+                    <p>date</p>
+            </ul>
+             
+             
+             <P>This is a description of this tag and why it's cool. This is a description of this tag and why it's cool. This is a description of this tag and why it's cool. This is a description of this tag and why it's cool. This is a description of this tag and why it's cool.</P>
+
+     
+             <!-- add tags, authors, categories-->
+        
+     
+    
+</body>
+</html>

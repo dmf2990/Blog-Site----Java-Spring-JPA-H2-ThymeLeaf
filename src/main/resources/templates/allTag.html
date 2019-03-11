@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>THIS BETTER FUCKING WORK, OR ELSE!!!!!!</p>
+    <form action="/allTag" method="POST">
+        <ul>
+            <p>Add Tag</p>
+            <li><input type="text" name="tagName"></li>
+            <li class=""> <button type="submit">Submit</button></li>
+        </ul>
+
+        <ul th:each="tag : ${Tags}">
+            <li><a th:href="@{|/allTag/${tag.id}|}" th:text="${tag.tagName}"></a></li>
+        </ul>
+
+    </form>
+</body>
+</html>
