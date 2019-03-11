@@ -1,0 +1,40 @@
+.form-section {
+    height: 100vh;
+    background-color: #808182;
+    display: flex;
+    padding: 10% 10% 10% 10%;
+    
+  }
+  
+  .form {
+    border: 1px solid black;
+    width: 100%;
+    padding: 5%;
+    background-color: white;
+    box-shadow: 3px 3px rgba(0,0,0, .5)
+  }
+  
+  .title-box {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .author-box {
+    width: 30%;
+    margin-bottom: 1rem;
+  }
+  
+  .tag-box {
+    width: 30%;
+    margin-bottom: 1rem;
+  }
+  
+  .cat-box {
+    width: 30%;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-area {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
