@@ -18,7 +18,6 @@ public class Post {
 	private Long id;
 	private String postTitle;
 	private LocalDateTime date;
-	
 	@Lob
 	private String body;
 	
@@ -58,7 +57,7 @@ public class Post {
 		return body;
 	}
 
-	public Collection<Author> getAuthor() {
+	public Collection<Author> getAuthors() {
 		return authors;
 	}
 

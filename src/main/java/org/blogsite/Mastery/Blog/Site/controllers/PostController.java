@@ -70,23 +70,28 @@ public class PostController {
 	}
 
 	
-	// add more tags/auth to specific post pg
-//	@PostMapping("/allPost/{id}")
-//	public String submitAnotherTagOrAuth (@PathVariable Long id, String tagName, String authorName) {
-//		Post post = postRepo.findById(id).get();
-//		
-//	if (tagName != null) {
-//		Tag tag = tagRepo.save(new Tag (tagName));
-//		post.addNewTag(tag);
-//		postRepo.save(post);
-//		
-//	} else if(authorName != null) {
-//		Author author = authorRepo.save(new Author(authorName));
-//		post.addNewAuthor(author);
-//		postRepo.save(post);
-//	}
-//	
-//	return"redirect:/allPost/{id}";
-//}
+//	 add more tags/auth to specific post pg
+	@PostMapping("/allPost/{id}/tag")
+	public String submitAnotherTag (@PathVariable Long id, String tagName) {
+		Post post = postRepo.findById(id).get();
+		Tag tag = tagRepo.findByTagName(tagName);
+		
+		post.addNewTag(tag);
+		postRepo.save(post);
+		
+		return"redirect:/allPost/{id}";
+	 }
+	@PostMapping("/allPost/{id}/author")
+		public String submitAnotherAuth (@PathVariable Long id, String authorName) {
+
+		Post post = postRepo.findById(id).get();
+		Author author = authorRepo.findByAuthorName(authorName);
+		
+		post.addNewAuthor(author);
+		postRepo.save(post);
+	
+	
+	return"redirect:/allPost/{id}";
+}
 
 }
