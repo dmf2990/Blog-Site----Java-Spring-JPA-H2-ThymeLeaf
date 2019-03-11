@@ -47,10 +47,13 @@ public class AuthorController {
 	}
 	
 	// get specific author
+	// use singleAuth to call on collection of posts in TH: line 19
 	@GetMapping("/allAuth/{id}")
 	public String getAuth(@PathVariable Long id, Model model) {
 		model.addAttribute("SingleAuth", authorRepo.findById(id).get());
 		return "specAuth";
 	}
+	
+	
 
 }

@@ -39,7 +39,7 @@ public class Initializer implements CommandLineRunner {
 		Author author9 = authorRepo.save(new Author("Joy"));
 		Author author10 = authorRepo.save(new Author("Traci"));
 		
-		Tag tag = tagRepo.save(new Tag("tag"));	
+		Tag tag1 = tagRepo.save(new Tag("tag"));	
 		Tag tag2 = tagRepo.save(new Tag("fit"));
 		Tag tag3 = tagRepo.save(new Tag("health"));
 		Tag tag4 = tagRepo.save(new Tag("diet"));
@@ -61,10 +61,10 @@ public class Initializer implements CommandLineRunner {
 		Category category9 = catRepo.save(new Category("muay thai"));
 		Category category10 = catRepo.save(new Category("football"));
 		
-		postRepo.save(new Post("Darrel", "Darrel likes to posts blogs like this", author1, category1, tag));
-		postRepo.save(new Post("Olympic", "Blogs about olympic lifting are cool", author2, category2, tag5));
-		postRepo.save(new Post("Crosscountry", "Running crosscountry is hard", author3, category3, tag6));
-		postRepo.save(new Post("Fitness", "Fitness is awesome", author4, category4, tag4));
+		postRepo.save(new Post("Darrel", "Darrel likes to posts blogs like this", author1, category1, tag1));
+		postRepo.save(new Post("Steve", "Blogs about olympic lifting are cool", author1, category1, tag1));
+		postRepo.save(new Post("Crosscountry", "Running crosscountry is hard", author1, category1, tag1));
+		postRepo.save(new Post("Fitness", "Fitness is awesome", author4, category1, tag1));
 
 	}
 

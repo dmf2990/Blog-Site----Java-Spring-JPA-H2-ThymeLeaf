@@ -76,4 +76,12 @@ public class Post {
 				+ ", tag=" + tags + ", category=" + category + "]";
 	}
 
+	public void addNewTag(Tag tag) {
+		tags.add(tag);
+		
+	}
+
+	public void addNewAuthor(Author author) {
+		authors.add(author);
+	}
 }

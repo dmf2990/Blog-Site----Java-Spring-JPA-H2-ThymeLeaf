@@ -47,9 +47,11 @@ public class TagController {
 	}
 	
 	// get specific tag
+	// also use SingleTag to populate all posts with same tag in specific tag pg
 	@GetMapping("/allTag/{id}")
 	public String getTag(@PathVariable Long id, Model model) {
 		model.addAttribute("SingleTag", tagRepo.findById(id).get());
 		return "specTag";
 	}
+	
 }
