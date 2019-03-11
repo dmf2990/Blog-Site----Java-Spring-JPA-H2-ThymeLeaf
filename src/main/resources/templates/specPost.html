@@ -37,8 +37,8 @@
 </form>
 
 <form th:action="@{|/allPost/${SinglePost.id}/tag|}" method="POST"></form>
-<ul>
-    <li>
+   <ul>
+      <li>
         <select class="" id="" name="tagName">
             <option value="0"> Select Tag </option>
             <option th:each="tag : ${Tags}"
@@ -47,7 +47,7 @@
         </select>
       </li>
     <li class=""> <button type="submit">Submit</button></li>
-</ul>
+  </ul>
 </form>
 
 </body>
