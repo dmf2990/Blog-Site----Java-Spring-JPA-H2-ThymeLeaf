@@ -63,8 +63,8 @@ public class Initializer implements CommandLineRunner {
 		
 		postRepo.save(new Post("Darrel", "Darrel likes to posts blogs like this", author1, category1, tag1));
 		postRepo.save(new Post("Steve", "Blogs about olympic lifting are cool", author1, category1, tag1));
-		postRepo.save(new Post("Crosscountry", "Running crosscountry is hard", author1, category1, tag1));
-		postRepo.save(new Post("Fitness", "Fitness is awesome", author4, category1, tag1));
+		postRepo.save(new Post("Thomas", "Running crosscountry is hard", author1, category1, tag1));
+		postRepo.save(new Post("Daniel", "Fitness is awesome", author4, category1, tag1));
 
 	}
 

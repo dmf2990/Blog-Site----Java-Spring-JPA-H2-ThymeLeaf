@@ -33,12 +33,15 @@
       <p class="post-section__title">VO2MAX</p>
    </section>  
     <section class="post-section">
-        <p>Posts will live in here.</p>
+        <p>Welcome! Please See All Posts Below!!</p>
+        <p>(per our instructor, view will be focused on in coming weeks - functionality was primary goal)</p>
+        <p></p>
         <ul th:each="post : ${Posts}">
             <li><a th:href="@{|/allPost/${post.id}|}" th:text="${post.postTitle}"></a></li>
             <li th:text="${post.body}"></li>
             <p>date</p>
-        </ul>
+          </ul>
+          <p></p>
     </section>
    
     <footer class="footer">
